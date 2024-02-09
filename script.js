@@ -1,9 +1,3 @@
-function getComputerChoice() {
-    let arr = ["rock", "paper", "scissors"];
-    return arr[Math.floor(Math.random()* arr.length)];
-}
-
-const computerSelection = getComputerChoice();
 
 function  playRound (lPlayerSelection, computerSelection){
     if(lPlayerSelection === computerSelection)
@@ -51,11 +45,19 @@ function  playRound (lPlayerSelection, computerSelection){
     }
 }
 
-for(i=5; i>=1;)
+for(i=5; i>=1; i--)
 {
     let playerSelection = prompt("Please select Rock, Paper or Scissor", "Rock");
     let lPlayerSelection = playerSelection.toLowerCase();
+    
+    function getComputerChoice() {
+        let arr = ["rock", "paper", "scissors"];
+        return arr[Math.floor(Math.random()* arr.length)];
+    }
+    
+    let computerSelection = getComputerChoice();
+
     playRound(lPlayerSelection, computerSelection);
-    i--;
+    
 }
 
